@@ -66,6 +66,7 @@ class FoodCartsCell: UICollectionViewCell {
     func setUpConstraints() {
         contentView.addSubview(constainer, imageView)
         constainer.addSubview(rateLabel, caloryLabel, titleLabel)
+        let commontConstraints = 10
         
         constainer.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(-80)
@@ -81,19 +82,19 @@ class FoodCartsCell: UICollectionViewCell {
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(20)
-            make.leading.equalToSuperview().offset(10)
+            make.leading.equalToSuperview().offset(commontConstraints)
         }
         
         rateLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
-            make.leading.equalToSuperview().offset(10)
-            make.bottom.equalTo(constainer.snp.bottom).offset(-10)
+            make.top.equalTo(titleLabel.snp.bottom).offset(commontConstraints)
+            make.leading.equalToSuperview().offset(commontConstraints)
+            make.bottom.equalTo(constainer.snp.bottom).offset(-commontConstraints)
         }
         
         caloryLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
-            make.trailing.equalToSuperview().offset(-10)
-            make.bottom.equalTo(constainer.snp.bottom).offset(-10)
+            make.top.equalTo(titleLabel.snp.bottom).offset(commontConstraints)
+            make.trailing.equalToSuperview().offset(-commontConstraints)
+            make.bottom.equalTo(constainer.snp.bottom).offset(-commontConstraints)
         }
     }
 }
