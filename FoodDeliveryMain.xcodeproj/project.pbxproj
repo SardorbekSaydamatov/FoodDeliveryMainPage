@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84D6BC9F2C185C1E0020FA28 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6BC9E2C185C1E0020FA28 /* TabBarController.swift */; };
+		84D6BCA12C1862C60020FA28 /* PlaceholderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6BCA02C1862C60020FA28 /* PlaceholderController.swift */; };
+		84D6BCA32C1864870020FA28 /* ProfileViewConstroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6BCA22C1864870020FA28 /* ProfileViewConstroller.swift */; };
+		84D6BCA52C1864B40020FA28 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6BCA42C1864B40020FA28 /* ProfileModel.swift */; };
+		84D6BCA92C1865360020FA28 /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6BCA82C1865360020FA28 /* ProfileHeaderCell.swift */; };
+		84D6BCAB2C18656B0020FA28 /* BodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6BCAA2C18656B0020FA28 /* BodyCell.swift */; };
 		84EE4D002C1041D600A2FF48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE4CFF2C1041D600A2FF48 /* AppDelegate.swift */; };
 		84EE4D022C1041D600A2FF48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE4D012C1041D600A2FF48 /* SceneDelegate.swift */; };
 		84EE4D042C1041D600A2FF48 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE4D032C1041D600A2FF48 /* MainViewController.swift */; };
@@ -26,6 +32,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84D6BC9E2C185C1E0020FA28 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		84D6BCA02C1862C60020FA28 /* PlaceholderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderController.swift; sourceTree = "<group>"; };
+		84D6BCA22C1864870020FA28 /* ProfileViewConstroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewConstroller.swift; sourceTree = "<group>"; };
+		84D6BCA42C1864B40020FA28 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		84D6BCA82C1865360020FA28 /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
+		84D6BCAA2C18656B0020FA28 /* BodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyCell.swift; sourceTree = "<group>"; };
 		84EE4CFC2C1041D600A2FF48 /* FoodDeliveryMain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodDeliveryMain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EE4CFF2C1041D600A2FF48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84EE4D012C1041D600A2FF48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +69,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84D6BCA62C1864EB0020FA28 /* MainViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				84EE4D212C104D6400A2FF48 /* HeaderCell.swift */,
+				84EE4D232C104FFE00A2FF48 /* DateCell.swift */,
+				84EE4D272C10531E00A2FF48 /* TodaysMealCell.swift */,
+				84EE4D2D2C1081D000A2FF48 /* FoodCartsCell.swift */,
+				84EE4D202C104C1800A2FF48 /* HorizontalCells */,
+			);
+			path = MainViewCells;
+			sourceTree = "<group>";
+		};
+		84D6BCA72C1865060020FA28 /* ProfileViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				84D6BCA82C1865360020FA28 /* ProfileHeaderCell.swift */,
+				84D6BCAA2C18656B0020FA28 /* BodyCell.swift */,
+			);
+			path = ProfileViewCells;
+			sourceTree = "<group>";
+		};
 		84EE4CF32C1041D600A2FF48 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +143,7 @@
 				84EE4D1C2C1047E300A2FF48 /* DateModel.swift */,
 				84EE4D1E2C1047FB00A2FF48 /* FoodModel.swift */,
 				84EE4D2B2C105AFA00A2FF48 /* CellsModel.swift */,
+				84D6BCA42C1864B40020FA28 /* ProfileModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -117,12 +151,12 @@
 		84EE4D162C1042E400A2FF48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84D6BC9E2C185C1E0020FA28 /* TabBarController.swift */,
+				84D6BCA02C1862C60020FA28 /* PlaceholderController.swift */,
 				84EE4D032C1041D600A2FF48 /* MainViewController.swift */,
-				84EE4D212C104D6400A2FF48 /* HeaderCell.swift */,
-				84EE4D232C104FFE00A2FF48 /* DateCell.swift */,
-				84EE4D272C10531E00A2FF48 /* TodaysMealCell.swift */,
-				84EE4D2D2C1081D000A2FF48 /* FoodCartsCell.swift */,
-				84EE4D202C104C1800A2FF48 /* HorizontalCells */,
+				84D6BCA22C1864870020FA28 /* ProfileViewConstroller.swift */,
+				84D6BCA72C1865060020FA28 /* ProfileViewCells */,
+				84D6BCA62C1864EB0020FA28 /* MainViewCells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,11 +252,17 @@
 				84EE4D262C10517E00A2FF48 /* SelectableDateCell.swift in Sources */,
 				84EE4D002C1041D600A2FF48 /* AppDelegate.swift in Sources */,
 				84EE4D282C10531E00A2FF48 /* TodaysMealCell.swift in Sources */,
+				84D6BCA12C1862C60020FA28 /* PlaceholderController.swift in Sources */,
 				84EE4D1F2C1047FB00A2FF48 /* FoodModel.swift in Sources */,
 				84EE4D2E2C1081D000A2FF48 /* FoodCartsCell.swift in Sources */,
+				84D6BCA52C1864B40020FA28 /* ProfileModel.swift in Sources */,
 				84EE4D2C2C105AFA00A2FF48 /* CellsModel.swift in Sources */,
+				84D6BCA32C1864870020FA28 /* ProfileViewConstroller.swift in Sources */,
+				84D6BCA92C1865360020FA28 /* ProfileHeaderCell.swift in Sources */,
 				84EE4D182C10430A00A2FF48 /* UIView+Extensions.swift in Sources */,
 				84EE4D222C104D6400A2FF48 /* HeaderCell.swift in Sources */,
+				84D6BCAB2C18656B0020FA28 /* BodyCell.swift in Sources */,
+				84D6BC9F2C185C1E0020FA28 /* TabBarController.swift in Sources */,
 				84EE4D022C1041D600A2FF48 /* SceneDelegate.swift in Sources */,
 				84EE4D242C104FFE00A2FF48 /* DateCell.swift in Sources */,
 			);
