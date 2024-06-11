@@ -76,7 +76,8 @@ class FoodCartsCell: UICollectionViewCell {
         
         imageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(30)
-            make.leading.equalToSuperview().offset(13)
+            make.centerX.equalTo(constainer)
+           // make.leading.equalToSuperview().offset(10)
             make.size.equalTo(150)
         }
         

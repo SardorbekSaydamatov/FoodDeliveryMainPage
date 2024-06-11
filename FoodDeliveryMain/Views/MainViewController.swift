@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
         layout.scrollDirection = .vertical
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.backgroundColor = .systemBackground
-        collection.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        collection.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 65, right: 10)
         collection.showsVerticalScrollIndicator = false
         return collection
     }()
