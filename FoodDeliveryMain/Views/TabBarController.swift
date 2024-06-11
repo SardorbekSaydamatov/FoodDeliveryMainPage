@@ -13,17 +13,19 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         let placeHolderViewController = PlaceholderController(message: "Coming Soon...")
-        placeHolderViewController.tabBarItem = UITabBarItem(title: "Tab 1", image: UIImage(systemName: "clock"), tag: 0)
+        placeHolderViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "clock"), tag: 0)
 
         let mainViewController = MainViewController()
-        mainViewController.tabBarItem = UITabBarItem(title: "Main Tab", image: UIImage(systemName: "fork.knife"), tag: 1)
+        mainViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "fork.knife"), tag: 1)
         
         let profileViewController = ProfileViewController()
-        profileViewController.tabBarItem = UITabBarItem(title: "Profile Tab", image: UIImage(systemName: "person"), tag: 2)
+        profileViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "person"), tag: 2)
         
         viewControllers = [placeHolderViewController, mainViewController, profileViewController]
         
-        tabBar.barTintColor = .white
+        tabBar.barTintColor = .systemBackground
+        tabBar.tintColor = UIColor(red: 167/255.0, green: 214/255.0, blue: 140/255.0, alpha: 1.0)
+        tabBar.unselectedItemTintColor = .gray
     }
     
     override func viewDidLayoutSubviews() {

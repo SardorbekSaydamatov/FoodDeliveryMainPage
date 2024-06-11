@@ -35,7 +35,7 @@ class FoodCartsCell: UICollectionViewCell {
     private let rateLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 10, weight: .light)
-        label.textColor = .black
+        label.textColor = .label
         label.text = "⭐️4.8"
         return label
     }()
@@ -43,7 +43,7 @@ class FoodCartsCell: UICollectionViewCell {
     private let caloryLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 10, weight: .light)
-        label.textColor = .black
+        label.textColor = .label
         label.text = "🔥150 Kcal"
         return label
     }()

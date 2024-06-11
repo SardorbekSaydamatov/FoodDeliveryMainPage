@@ -24,7 +24,7 @@ class TodaysMealCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         label.text = "Popular now"
-        label.textColor = .black
+        label.textColor = .label
         return label
     }()
     
@@ -45,7 +45,7 @@ class TodaysMealCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         label.text = "Today's meal"
-        label.textColor = .black
+        label.textColor = .label
         return label
     }()
     
