@@ -24,7 +24,7 @@ class DateCell: UICollectionViewCell {
     
     private let dateTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         label.text = "Serving this Month"
         label.textColor = .black
         return label
@@ -67,12 +67,12 @@ class DateCell: UICollectionViewCell {
         let commonConstraints = 10
         
         dateTitleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(30)
+            make.top.equalToSuperview().offset(commonConstraints)
             make.leading.equalToSuperview().offset(commonConstraints)
         }
         
         dateLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(30)
+            make.top.equalToSuperview().offset(commonConstraints)
             make.trailing.equalToSuperview().offset(-commonConstraints)
         }
         

@@ -121,6 +121,7 @@
 				84EE4D212C104D6400A2FF48 /* HeaderCell.swift */,
 				84EE4D232C104FFE00A2FF48 /* DateCell.swift */,
 				84EE4D272C10531E00A2FF48 /* TodaysMealCell.swift */,
+				84EE4D2D2C1081D000A2FF48 /* FoodCartsCell.swift */,
 				84EE4D202C104C1800A2FF48 /* HorizontalCells */,
 			);
 			path = Views;
@@ -131,7 +132,6 @@
 			children = (
 				84EE4D252C10517E00A2FF48 /* SelectableDateCell.swift */,
 				84EE4D292C10551000A2FF48 /* HorizontalFoodsCells.swift */,
-				84EE4D2D2C1081D000A2FF48 /* FoodCartsCell.swift */,
 			);
 			path = HorizontalCells;
 			sourceTree = "<group>";

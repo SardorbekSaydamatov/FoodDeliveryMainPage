@@ -20,9 +20,30 @@ class TodaysMealCell: UICollectionViewCell {
         FoodModel(title: "International", imageName: "somsa")
     ]
     
+    private let popularNowLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        label.text = "Popular now"
+        label.textColor = .black
+        return label
+    }()
+    
+    let seeAllButton: UIButton = {
+        let button = UIButton(type: .system)
+        let title = "See all"
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.gray,
+            .underlineStyle: NSUnderlineStyle.single.rawValue
+        ]
+        let attributedTitle = NSAttributedString(string: title, attributes: attributes)
+        button.setAttributedTitle(attributedTitle, for: .normal)
+        return button
+    }()
+
+    
     private let todayMealLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         label.text = "Today's meal"
         label.textColor = .black
         return label
@@ -53,29 +74,39 @@ class TodaysMealCell: UICollectionViewCell {
     }
     
     func setUpConstraints() {
-        contentView.addSubview(collectionView, todayMealLabel)
+        contentView.addSubview(collectionView, todayMealLabel, popularNowLabel, seeAllButton)
         let commonConstraints = 10
         
         todayMealLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(-20)
+            make.top.equalToSuperview().offset(-15)
             make.leading.equalToSuperview().offset(commonConstraints)
         }
         
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(todayMealLabel).offset(10)
-            make.height.equalTo(100)
+            make.top.equalTo(todayMealLabel).offset(30)
+            make.height.equalTo(150)
             make.width.equalToSuperview()
-           // make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-commonConstraints)
+        }
+        
+        popularNowLabel.snp.makeConstraints { make in
+            make.top.equalTo(collectionView.snp.bottom).offset(10)
+            make.leading.equalToSuperview().offset(commonConstraints)
+        }
+        
+        seeAllButton.snp.makeConstraints { make in
+            make.top.equalTo(collectionView.snp.bottom).offset(10)
+            make.trailing.equalTo(-commonConstraints)
         }
     }
 }
 
 // MARK: - TodaysMealCell Extensions
 
-extension TodaysMealCell: UICollectionViewDataSource, UICollectionViewDelegate {
+extension TodaysMealCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 100)
+        return CGSize(width: 80, height: 120)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

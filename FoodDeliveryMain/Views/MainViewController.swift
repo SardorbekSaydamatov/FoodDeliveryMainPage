@@ -25,9 +25,10 @@ class MainViewController: UIViewController {
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-       // layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.backgroundColor = .systemBackground
+        collection.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        collection.showsVerticalScrollIndicator = false
         return collection
     }()
 
@@ -61,7 +62,11 @@ extension MainViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 200)
+        if indexPath.section == 0 {
+            return CGSize(width: collectionView.bounds.width, height: 130)
+        } else {
+            return CGSize(width: collectionView.bounds.width / 2 - 20, height: 250)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -105,9 +110,6 @@ extension MainViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
             cell.configureData(title: foods[indexPath.row].title, imageTitle: foods[indexPath.row].imageName)
             return cell
         }
-    }
-
-    
-    
+    } 
 }
 

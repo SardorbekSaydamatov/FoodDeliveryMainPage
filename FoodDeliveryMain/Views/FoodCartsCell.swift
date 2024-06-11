@@ -8,24 +8,25 @@
 import UIKit
 
 class FoodCartsCell: UICollectionViewCell {
-    
+        
     private let constainer: UIView = {
         let container = UIView()
-        container.backgroundColor = .gray.withAlphaComponent(0.3)
+        container.backgroundColor = .gray.withAlphaComponent(0.07)
+        container.layer.cornerRadius = 10
         return container
     }()
     
     private let imageView: UIImageView = {
         let image = UIImageView()
         image.clipsToBounds = true
-        image.layer.cornerRadius = 50
+        image.layer.cornerRadius = 75
         return image
     }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .label
-        label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         label.textAlignment = .center
         label.preferredMaxLayoutWidth = 200
         return label
@@ -33,7 +34,7 @@ class FoodCartsCell: UICollectionViewCell {
     
     private let rateLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 8, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 10, weight: .light)
         label.textColor = .black
         label.text = "⭐️4.8"
         return label
@@ -41,7 +42,7 @@ class FoodCartsCell: UICollectionViewCell {
     
     private let caloryLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 8, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 10, weight: .light)
         label.textColor = .black
         label.text = "🔥150 Kcal"
         return label
@@ -50,6 +51,7 @@ class FoodCartsCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setUpConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -62,35 +64,34 @@ class FoodCartsCell: UICollectionViewCell {
     }
     
     func setUpConstraints() {
-        contentView.addSubview(constainer)
-        constainer.addSubview( rateLabel, caloryLabel, titleLabel, imageView)
+        contentView.addSubview(constainer, imageView)
+        constainer.addSubview(rateLabel, caloryLabel, titleLabel)
         
         constainer.snp.makeConstraints { make in
-            make.verticalEdges.equalToSuperview()
-            make.leading.equalToSuperview().offset(5)
-            make.trailing.equalToSuperview().offset(-5)
-            
+            make.top.equalTo(imageView.snp.bottom).offset(-80)
+            make.horizontalEdges.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
         
         imageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(-20)
-            make.leading.equalToSuperview().offset(10)
-            make.size.equalTo(100)
+            make.top.equalToSuperview().offset(30)
+            make.leading.equalToSuperview().offset(13)
+            make.size.equalTo(150)
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(10)
+            make.top.equalTo(imageView.snp.bottom).offset(20)
             make.leading.equalToSuperview().offset(10)
         }
         
         rateLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel).offset(10)
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(10)
             make.bottom.equalTo(constainer.snp.bottom).offset(-10)
         }
         
         caloryLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel).offset(10)
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.trailing.equalToSuperview().offset(-10)
             make.bottom.equalTo(constainer.snp.bottom).offset(-10)
         }

@@ -10,6 +10,21 @@ import SnapKit
 
 class HeaderCell: UICollectionViewCell {
     
+    private let filterButton: UIButton = {
+        let button = UIButton(type: .system)
+        let image = UIImage(systemName: "cursorarrow.motionlines")
+        button.setImage(image, for: .normal)
+        button.tintColor = .white
+        return button
+    }()
+    
+    private var containerView: UIView = {
+        let container = UIView()
+        container.layer.cornerRadius = 5
+        container.backgroundColor = UIColor(red: 167/255.0, green: 214/255.0, blue: 140/255.0, alpha: 1.0)
+        return container
+    }()
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         let attributedString = NSMutableAttributedString(string: "Good Afternoon, Sardorbek!")
@@ -44,7 +59,8 @@ class HeaderCell: UICollectionViewCell {
     }
     
     func setUpConstraints() {
-        contentView.addSubview(titleLabel, subtitleLabel, searchBar)
+        contentView.addSubview(titleLabel, subtitleLabel, searchBar, containerView)
+        containerView.addSubview(filterButton)
         let commonConstraints = 15
         let commonConstraints2 = 10
         
@@ -62,6 +78,19 @@ class HeaderCell: UICollectionViewCell {
             make.top.equalTo(subtitleLabel.snp.bottom).offset(commonConstraints2)
             make.leading.equalToSuperview().offset(8)
             make.trailing.equalToSuperview().offset(-80)
+        }
+        
+        containerView.snp.makeConstraints { make in
+            make.top.equalTo(subtitleLabel.snp.bottom).offset(commonConstraints)
+            make.leading.equalTo(searchBar.snp.trailing).offset(commonConstraints)
+            make.size.equalTo(40)
+        }
+        
+        filterButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(5)
+            make.leading.equalToSuperview().offset(5)
+            make.trailing.equalToSuperview().offset(-5)
+            make.bottom.equalToSuperview().offset(-5)
         }
     }
 }
