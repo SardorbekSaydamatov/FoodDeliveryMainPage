@@ -27,6 +27,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout )
         collectionView.backgroundColor = .systemBackground
         collectionView.allowsSelection = false
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 25, right: 0)
         return collectionView
     }()
     
